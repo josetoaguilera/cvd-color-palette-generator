@@ -1,9 +1,8 @@
 # from preprocess import *
 # from aux_functions import *
-from .aux_functions import (
+from aux_functions import (
     get_color_difference_matrix,
     get_color_difference_matrix_v2,
-    get_indexes_below_n,
     get_similar_colors_index,
     interpolate_colors_lab_to_lab,
     rgb_cmap_to_lab_cmap,
@@ -12,7 +11,7 @@ from .aux_functions import (
 import numpy as np
 from skimage.color import delta_e
 
-from pprint import pprint
+
 def get_better_cathegorical_group(splitted_universe, cmap_lab):
     """
     Calculates the better categorical group based on color difference metrics (mean and std).
@@ -43,9 +42,10 @@ def categorical_selection(cmap, min_value):
     Returns:
         result (list(int)): The selected categorical group indexes.
     """
+
     cmap_lab = rgb_cmap_to_lab_cmap(cmap)
-    matrix_difference = get_color_difference_matrix_v2(cmap_lab)
-    less_than_n_list = get_indexes_below_n(matrix_difference, min_value)
+    matrix_difference = get_color_difference_matrix(cmap_lab)
+    less_than_n_list = get_similar_colors_index(matrix_difference, min_value)
     less_than_n_list = list(map(lambda x: [x[0], x[1] + x[0] + 1],
                                 less_than_n_list))
     u_list = list(range(len(cmap)))

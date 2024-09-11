@@ -2,7 +2,7 @@
 from skimage.color import delta_e
 import numpy as np
 
-from .aux_functions import (
+from aux_functions import (
     delta_l_matrix,
     get_max_min_indices,
     interpolate_colors_lab_to_lab,

@@ -2,7 +2,7 @@
 import json
 import matplotlib.colors as mcolors
 
-from .module1 import obtener_colores_relevantes
+from module1 import obtener_colores_relevantes
 
 
 def save_and_load_image(uploaded_file, filename, num_colores=20):

@@ -1,4 +1,4 @@
-from .aux_functions import (
+from aux_functions import (
     rgb_cmap_to_lab_cmap,
     get_color_difference_matrix,
     find_max_index_in_list_of_lists,

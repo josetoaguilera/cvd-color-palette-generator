@@ -5,7 +5,7 @@ from pprint import pprint
 from colormath.color_objects import LabColor
 from skimage.color import delta_e
 
-from .aux_functions import (
+from aux_functions import (
     complemento_lab,
     delta_l_ratio_matrix,
     filter_tuples_by_exact_numbers,
@@ -36,6 +36,7 @@ def diverging_selection(cmap):
 
     lightness_filtered = {}
     for i in range(len(cmap_lab)):
+        print(i, cmap_lab[i][0])
         if cmap_lab[i][0] < 50:
             lightness_filtered[i] = cmap_lab[i]
 
@@ -139,6 +140,7 @@ def diverging_selection_cvd(cmap, cvd):
             delta_e_index_list.append([delta_l_value, delta_e_value, par])
     delta_e_index_list = sorted(delta_e_index_list, key=lambda x: (x[0], x[1]),
                                 reverse=True)
+    pprint(delta_e_index_list[:20])
     result_indices = delta_e_index_list[0][2]
     for i in range(len(delta_e_index_list)):
         if delta_e_index_list[i][1] > 0:

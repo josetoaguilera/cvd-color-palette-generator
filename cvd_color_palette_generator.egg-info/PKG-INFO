@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: cvd_color_palette_generator
+Version: 0.1
+Summary: librería para generar paletas de colores para personas con discapacidad visual
+Home-page: https://github.com/josetoaguilera/cvd-color-palette-generator
+Author: Jose Tomas Aguilera Yevenes
+Author-email: joseaguilera@ug.uchile.cl
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+License-File: LICENSE
+Requires-Dist: colormath>=3.0.0
+Requires-Dist: daltonlens>=0.1.5
+Requires-Dist: matplotlib>=3.9.0
+Requires-Dist: scikit-image>=0.24.0
+Requires-Dist: plotly>=5.23.0
+Requires-Dist: pandas>=2.2.2
+Requires-Dist: ipywidgets==7.7.1
+Requires-Dist: opencv-python>=4.10.0.84
+Requires-Dist: scikit-learn>=1.5.1
